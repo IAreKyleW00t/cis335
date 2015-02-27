@@ -12,11 +12,11 @@ INCLUDE Irvine32.inc
 ;---------------------------------------;
 
 
-.data
+.DATA
     area1   DWORD   01234567h
     area2   SBYTE   -7
 
-.code
+.CODE
     main PROC
         mov     eax,area1
         add     eax,89EFh

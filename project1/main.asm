@@ -11,10 +11,10 @@ INCLUDE Irvine32.inc
 ;   Updated:        2-11-2015           ;
 ;---------------------------------------;
 
-.data
+.DATA
     myMessage BYTE "CIS 335 Kyle Colantonio 2595744",0dh,0ah,0
 
-.code
+.CODE
     main PROC
         call    Clrscr
 

@@ -11,13 +11,13 @@ INCLUDE Irvine32.inc
 ;   Updated:        2-11-2015           ;
 ;---------------------------------------;
 
-.data
+.DATA
     source  BYTE    "CIS 335/535 is a great course", 0
     revstr  BYTE    SIZEOF source DUP(0)
     revwrd  BYTE    SIZEOF source DUP(0)
     ecxbkp  DWORD   ?
 
-.code
+.CODE
     main    PROC
         ; Print the original string ;
         mov     edx, 0
