@@ -8,7 +8,7 @@ INCLUDE Irvine32.inc
 ;   Description:    N/A                 ;
 ;   Date:           2-10-2015           ;
 ;                                       ;
-;   Updated:        2-11-2015           ;
+;   Updated:        3-2-2015            ;
 ;---------------------------------------;
 
 
@@ -18,15 +18,15 @@ INCLUDE Irvine32.inc
 
 .CODE
     main PROC
-        mov     eax,area1
-        add     eax,89EFh
-        mov     bl,area2
-        mov     bh,87h
-        add     bx,ax
-        mov     cx,bx
-        sub     cx,6789h
-        and     eax,0f0f0f0fh
-        mov     edx,0
+        mov     eax, area1
+        add     eax, 89EFh
+        mov     bl, area2
+        mov     bh, 87h
+        add     bx, ax
+        mov     cx, bx
+        sub     cx, 6789h
+        and     eax, 0f0f0f0fh
+        mov     edx, 0
         mov     dl, BYTE PTR area1
         
         exit

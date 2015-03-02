@@ -4,11 +4,11 @@ INCLUDE Irvine32.inc
 ;---------------------------------------;
 ;   Name:           Kyle Colantonio     ;
 ;   CSU ID:         2595744             ;
-;   Assignment:     1                   ;
-;   Description:    N/A                 ;
+;   Assignment:     3                   ;
+;   Description:    Reversing a String  ;
 ;   Date:           2-24-2015           ;
 ;                                       ;
-;   Updated:        2-11-2015           ;
+;   Updated:        3-2-2015            ;
 ;---------------------------------------;
 
 .DATA
