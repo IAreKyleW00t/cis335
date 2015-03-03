@@ -8,7 +8,7 @@ INCLUDE Irvine32.inc
 ;   Description:    Reversing a String  ;
 ;   Date:           2-24-2015           ;
 ;                                       ;
-;   Updated:        3-2-2015            ;
+;   Updated:        3-3-2015            ;
 ;---------------------------------------;
 
 .DATA
@@ -97,13 +97,13 @@ INCLUDE Irvine32.inc
             loop L3
             mov     revwrd[edi], 32 ; Add space
 
-            ; Restore L2-loop values and jump back into L2 ;
+            ; Restore L2-loop values and loop back into L2 ;
             mov     ecx, ecxbkp
             mov     esi, ebx
             inc     esi ; move 1 index foward
             mov     edi, ebx
             inc     edi ; move 1 index forward
-            jmp     L2
+            loop    L2
 
         ending:
             ; Increment through (ECX - EDI) ;
