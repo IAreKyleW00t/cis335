@@ -1,6 +1,3 @@
-TITLE   CIS 335 - Project 3
-INCLUDE Irvine32.inc
-
 ;---------------------------------------;
 ;   Name:           Kyle Colantonio     ;
 ;   CSU ID:         2595744             ;
@@ -10,6 +7,9 @@ INCLUDE Irvine32.inc
 ;                                       ;
 ;   Updated:        3-3-2015            ;
 ;---------------------------------------;
+
+TITLE   CIS 335 - Project 3
+INCLUDE Irvine32.inc
 
 .DATA
     source  BYTE    "CIS 335/535 is a great course", 0
