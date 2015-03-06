@@ -34,26 +34,30 @@ TITLE   Recursive Mobonacci Calculator
             ; Mobonacci(N - 1) * 2 ;
             sub     eax, 1
             push    eax
-            call    Mobonacci
+            call    Mobonacci   ; recursively call Mobonacci
             mov     ebx, eax
             pop     eax
+            
 
-            shl     ebx, 1
+            ; Multiply ebx by 2 ;
+            shl     ebx, 1      ; shift left 1
             mov     [ebp-4], ebx
 
             ; Mobonacci(N - 2) / 2 ;
             sub     eax, 1
             push    eax
-            call    Mobonacci
-            mov     ebx, eax  ; store eax into ebp-4
+            call    Mobonacci   ; recursively call Mobonacci
+            mov     ebx, eax    ; store eax into ebp-4
             pop     eax
 
-            shr     ebx, 1
+            ; Divide ebx by 2 ;
+            shr     ebx, 1      ; shift right 1
             mov     [ebp-8], ebx
 
+            ; Add the 2 numbers together ;
             mov     eax, 0
-            add     eax, [ebp-4]
-            add     eax, [ebp-8]
+            add     eax, [ebp-4]        ; from f(N-1)*2
+            add     eax, [ebp-8]        ; from f(N-2)/2
 
             ; Clean stack ;
             mov     esp, ebp
