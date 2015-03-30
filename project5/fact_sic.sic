@@ -1,0 +1,62 @@
+Addr    Instruction                     Object Code     Comment
+--------------------------------------------------------------------------
+0000    FACTSTD START   0                               ; Factorial in SIC
+
+0000            LDX     ZERO            04005A          ; Load 0 into X (index register)
+0003            LDA     ONE             00005D          ; Load 1 into X (current element)
+0006            STA     ARRAY,X         0C8066          ; Store 1 into our Array at index 0 (!0 = 1)
+0009           
+                ; Increment X by 3 ;
+000C            STX     TEMP            100057          ; Store X into TEMP
+000F            LDA     TEMP            000057          ; Load TEMP into A
+0012            ADD     THREE           180060          ; Increment A by 3 (size of word)
+0015            STA     TEMP            0C0057          ; Load A into TEMP
+0018            LDX     TEMP            040057          ; Load TEMP into X
+
+001B            LDA     ONE             00005D          ; Load 1 into A
+001E            STA     ARRAY,X         0C8066          ; Store 1 into our Array at index 3 (!1 = 1)
+0021            STA     CURR            0C0054          ; Store our current element into CURR
+                STA     PREV            0C0051          ; Store our result into PREV
+
+                ; Increment X by 3
+                ; and being our     
+                ; Factorial loop ;
+0024    LOOP    STX     TEMP            100057          ; Store X into TEMP
+0027            LDA     TEMP            000057          ; Load TEMP into A
+002A            ADD     THREE           180060          ; Increment A by 3 (size of word)
+002D            STA     TEMP            0C0057          ; Load A into TEMP
+0030            LDX     TEMP            040057          ; Load TEMP into X
+
+                ; Compute the
+                ; current element ;
+0033            LDA     CURR            000054          ; Load the current number into A
+0036            ADD     ONE             18005D          ; Add 1 to A (move to next number)
+0039            STA     CURR            0C0054          ; Store our new current number into CURR
+003C            MUL     PREV            200051          ; Multiply our current number by PREV
+003F            STA     PREV            0C005D          ; Store the result into PREV
+
+                ; Store result of
+                ; !N into Array at
+                ; index X ;
+0042            STA     ARRAY,X         0C8066
+
+                ; Check if loop is
+                ; finished ;
+0045            STX     TEMP            100057          ; Store X into TEMP
+0048            LDA     TEMP            000057          ; Load TEMP into A
+004B            COMP    MAX             280063          ; Compare to MAX
+004E            JLT     LOOP            380024          ; Loop again if we're not done
+
+                ; Variables ;
+0051            PREV    RESW    1                       ; Our previous result (!N)
+0054            CURR    RESW    1                       ; Our current element (number, n)
+0057            TEMP    TEMP    1                       ; Temporary variable
+
+                ; Constants ;
+005A            ZERO    WORD    0       000000          ; Zero constant
+005D            ONE     WORD    1       000001          ; One constant
+0060            THREE   WORD    3       000003          ; Three constant (size of word)
+0063            MAX     WORD    33      000021          ; Maximum size of our loop
+
+                ; Array ;
+0066            ARRAY  RESW    11                       ; Array to hold 11 numbers
