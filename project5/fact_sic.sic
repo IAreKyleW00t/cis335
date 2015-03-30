@@ -50,7 +50,7 @@ Addr    Instruction                     Object Code     Comment
                 ; Variables ;
 0051            PREV    RESW    1                       ; Our previous result (!N)
 0054            CURR    RESW    1                       ; Our current element (number, n)
-0057            TEMP    TEMP    1                       ; Temporary variable
+0057            TEMP    RESW    1                       ; Temporary variable
 
                 ; Constants ;
 005A            ZERO    WORD    0       000000          ; Zero constant

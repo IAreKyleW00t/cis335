@@ -7,43 +7,43 @@ Addr    Instruction                     Object Code     Comment
 0006            LDT     #33             750021          ; Max size (number of loops, 11 * 3 bytes = 33)
 
 0009            LDA     #1              010001          ; Load 1 into A
-000C            LDT     ARRAY,X         0FA037          ; Store 1 into our Array at index 0 (!0 = 1)
+000C            LDT     ARRAY,X         77A030          ; Store 1 into our Array at index 0 (!0 = 1)
 
                 ; Increment X by 3 ;
 000F            ADDR    S,X             9041
 
-0012            LDA     #1              010001          ; Load 1 into A
-0015            STA     ARRAY,X         0FA02E          ; Store 1 into our Array at index 3 (!1 = 1)
-0018            STA     CURR            0F0024          ; Store our current element (number, n) into CURR
-001B            STA     PREV            0F001E          ; Store our result into PREV
+0011            LDA     #1              010001          ; Load 1 into A
+0014            STA     ARRAY,X         0FA028          ; Store 1 into our Array at index 3 (!1 = 1)
+0017            STA     CURR            0F201F          ; Store our current element (number, n) into CURR
+001A            STA     PREV            0F2019          ; Store our result into PREV
 
                 ; Increment X by 3
                 ; and being our     
                 ; Factorial loop ;
-001E    LOOP    ADDR    S,X             9041
+001D    LOOP    ADDR    S,X             9041
                 
                 ; Compute the 
                 ; current element;
-0021            LDA     CURR            03001B          ; Load the current number into A
-0024            ADD     #1              190001          ; Add 1 to A (move to next number)
-0027            STA     CURR            0F0015          ; Store our new current number into CURR
-002A            MUL     PREV            23000F          ; Multiply our current number by our previous result
-002D            STA     PREV            0F000C          ; Store the result into PREV
+001F            LDA     CURR            032017          ; Load the current number into A
+0022            ADD     #1              190001          ; Add 1 to A (move to next number)
+0025            STA     CURR            0F2011          ; Store our new current number into CURR
+0028            MUL     PREV            23200B          ; Multiply our current number by our previous result
+002B            STA     PREV            0F2008          ; Store the result into PREV
                 
                 ; Store result of
                 ; !N into Array at
                 ; index X ;
-0031            STA     ARRAY,X         0FA012
+002E            STA     ARRAY,X         0FA00E
                 
                 ; Check if loop is
                 ; finished ;
-0033            COMPR   X,T             A015            ; Compare X to T (max)
-0036            JLT     LOOP            3B2FE8          ; Loop again if we're not done
+0031            COMPR   X,T             A015            ; Compare X to T (max)
+0033            JLT     LOOP            3B2FE7          ; Loop again if we're not done
                 
                 ; Variables ;
-0039            PREV    RESW    1                       ; Our previous result (!N)
-003C            CURR    RESW    1                       ; Our current element (number, n)
-003F            TEMP    TEMP    1                       ; Temporary variable
+0036            PREV    RESW    1                       ; Our previous result (!N)
+0039            CURR    RESW    1                       ; Our current element (number, n)
+003C            TEMP    RESW    1                       ; Temporary variable
                 
                 ; Array ;
-0043            ARRAY  RESW    11                       ; Array to hold the first 11 factorial numbers
+003F            ARRAY  RESW    11                       ; Array to hold the first 11 factorial numbers
