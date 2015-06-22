@@ -3,13 +3,14 @@ Project 6
 #### Description
   A program that will convert SIC/XE assembly code into the object code. I will take an ASM file as input and output a Listing file and Object file. The program will only check for the following instructions, directives, and registers...
   
-  Directives: `START`, `BYTE`, `WORD`, `RESB`, `RESW`, `END`, `BASE`, and `NOBASE`  
-  Instructions: `ADDR`, `COMPR`, `SUBR`, `MULR`, `DIVR`, `ADD`, `SUB`, `MUL`, `DIV`, `COMP`, `J`, `JEQ`, `JGT`, `JLT`, `JSUB`, `LDCH`, `RSUB`, `TIX`, `TIXR`, `RD`, `TD`, `STCH`, `CLEAR`, `LD` (`LD*`), and `ST` (`ST*`)  
-  Registers: `AX`, `BX`, `LX`, `SX`, `TX`, `XX`
+  **Directives**: `START`, `BYTE`, `WORD`, `RESB`, `RESW`, `END`, `BASE`, and `NOBASE`  
+  **Instructions**: `ADDR`, `COMPR`, `SUBR`, `MULR`, `DIVR`, `ADD`, `SUB`, `MUL`, `DIV`, `COMP`, `J`, `JEQ`, `JGT`, `JLT`, `JSUB`, `LDCH`, `RSUB`, `TIX`, `TIXR`, `RD`, `TD`, `STCH`, `CLEAR`, `LD` (`LD*`), and `ST` (`ST*`)  
+  **Registers**: `AX`, `BX`, `LX`, `SX`, `TX`, `XX`
   
   There is no output to the screen other than error message. Filenames will be relative to your input file (ie: main.asm will output to main.lst and main.obj). These files will be created automatically and be overwritten if they exist already.
   
-#### Example Input (main.asm)
+#### Example Input
+main.asm
   ```
   COPY    START   0
   FIRST   ST      RETADR,LX
@@ -58,7 +59,8 @@ Project 6
   OUTPUT  BYTE    X'05'
           END     FIRST
   ```
-#### Example Output (main.lst, main.obj)
+#### Example Output
+main.lst
   ```
   0000  COPY    START   0                 
   0000  FIRST   ST      RETADR,LX         17202D
@@ -108,6 +110,7 @@ Project 6
                 END     FIRST             
   ```
   
+  main.obj
   ```
   HCOPY	000000001077
   T0000001D17202D69202D4B1010360320262900003320074B10105D3F2FEC032010
