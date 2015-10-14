@@ -1,7 +1,7 @@
 Project 2
 ---------
 #### Description
-  Move and manipulate `area1` and `area2` to see how the registeres and flags change as each instruction is executed.
+  Move and manipulate `area1` and `area2` to see how the registers and flags change as each instruction is executed.
   
 #### Example Registers
   ```
