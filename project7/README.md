@@ -13,7 +13,7 @@ Project 7
 <factor> ::= intnum | ( <expr> )
 ```
   
-  The program will terminate if an invalid expression is given (ie: 3 + + 3).
+  The program will terminate if an invalid expression is given (ie: `3 + + 3`).
   
 #### Example
   ```
