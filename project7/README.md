@@ -6,7 +6,12 @@ Project 7
   Each character in the input should be separated by at least one space.
   
   **Operands**: `+`, `-`, `*`, `/`, `(`, and `)`  
-  **Grammar**: `<expr> ::= <term> { + <term> | - <term> }`, `<term> ::= <factor> { * <factor> | / <factor> }`, `<factor> ::= intnum | ( <expr> )`
+  **Grammar**:  
+```
+<expr> ::= <term> { + <term> | - <term> }
+<term> ::= <factor> { * <factor> | / <factor> }
+<factor> ::= intnum | ( <expr> )
+```
   
   The program will terminate if an invalid expression is given (ie: 3 + + 3).
   
